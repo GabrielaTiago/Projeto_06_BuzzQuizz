@@ -18,16 +18,26 @@
 <body>
     <header><h1>BuzzQuizz</h1></header>
     <main>
-        <div class="container-user-quizzes">
+        <div class="container-user-quizzes hidden">
             <p>Você não criou nenhum quizz ainda :(</p>
             <button>Criar Quizz</button>
+        </div>
+        <div class="created-quizzes">
+            <span class="user-quizzes">
+                <div class="title-section-quizzes">Seus quizzes</div>
+                <ion-icon name="add-circle"></ion-icon>
+            </span>
+            <div class="created-quizz"></div>
         </div>
         <div class="container-quizzes">
             <div class="title-section-quizzes">Todos dos Quizzes</div>
             <div class="quizzes">
-                <div class="individual-quizz">Qual diva pop você seria</div>
+                <div class="individual-quizz">
+                    <h3>Qual diva pop você seria</h3>
+                </div>
             </div>
         </div>
     </main>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </body>
 </html>
