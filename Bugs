@@ -1,0 +1,9 @@
+Layout desconfigura quando recebe quizz da API aqui. Aí também ?
+Organização aleatória não está funcionando
+Scroll para o topo do quizz quando der F5
+
+calcular score (número acertos)
+buscar total perguntas
+score/total perguntas = porcentagem que aparece na caixa de resultados
+exibir imagem e descrição associadas à porcentagem
+associar porcentagem aos níveis (minValue)
