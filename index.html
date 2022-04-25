@@ -7,6 +7,9 @@
     
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/style-tela-2.css">
+    <link rel="stylesheet" href="css/style-tela-3.css">
+    
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,12 +23,12 @@
     <main>
         <div class="container-user-quizzes hidden">
             <p>Você não criou nenhum quizz ainda :(</p>
-            <button>Criar Quizz</button>
+            <button onclick = "basicQuizz();">Criar Quizz</button>
         </div>
         <div class="created-quizzes">
             <span class="user-quizzes">
                 <div class="title-section-quizzes">Seus quizzes</div>
-                <ion-icon name="add-circle"></ion-icon>
+                <ion-icon name="add-circle" onclick = "basicQuizz();"></ion-icon>
             </span>
             <div class="created-quizz"></div>
         </div>
@@ -38,6 +41,9 @@
             </div>
         </div>
     </main>
+    <script src="./js/script.js"></script>
+    <script src="./js/script-tela-2.js"></script>
+    <script src="./js/script-tela-3.js"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </body>
 </html>
