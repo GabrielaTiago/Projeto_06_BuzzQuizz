@@ -183,3 +183,11 @@ main {
     text-align: center;
     border: none;
 }
+
+.answeroptions {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
