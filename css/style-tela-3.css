@@ -1,0 +1,140 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background-color: #FAFAFA;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    height: 69px;
+    background-color: #EC362D;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 37px;
+}
+
+h2{
+    color:black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.instructions{
+    height: 89px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.questions-box{
+    width: 600px;
+    height: 256px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 21px 0 24px 0;
+}
+
+.questions-box > p {
+    padding-left: 16px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.questions-creation-box{
+    width: 600px;
+    height: 825px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding: 21px 0 27px 0;
+}
+
+input{
+    height: 46px;
+    width: 564px;
+    border: 1px solid #d1d1d1;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding-left: 23.16px;
+    align-self: center;
+}
+
+.red-button{
+    width: 368.86px;
+    height: 54px;
+    background-color: #EC362D;
+    border-radius: 15px;
+    border:none;
+    margin-top: 85px;
+    margin-bottom: 61px;
+}
+
+.red-button p{
+    color: #FFF5F4;
+}
+
+.question-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 27px 17px 0 17px;
+    font-weight: bold;
+    font-size: 20px;
+    width: 600px;
+    background-color: #FFFFFF;
+    margin-top: 24px;
+}
+
+.question-header ion-icon{
+    color: black;
+}
+
+.questions-level-box{
+    width: 600px;
+    height: 316px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding: 21px 0 27px 0;
+}
+
+.hidden{
+    display:none;
+}
+
+.image-finish-quizz{
+    height: 266px;
+    width: 500px;
+    background-size: cover;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0 0 15px 15px;
+}
+
+.image-finish-quizz p{
+    color: #FFFFFF;
+}
