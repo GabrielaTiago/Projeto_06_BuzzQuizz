@@ -3,10 +3,7 @@ let selectedQuizzContent = "";
 let totalPercentageScore = 0;
 let score = 0;
 let totalOfAnsweredQuestions = 0;
-// let hideResultsContainer = "";
-// let hideRestartButtons = "";
-const scrollToTop = "";
-// let hideQuizz = "";
+let result = "";
 
 getSelectedQuizz(24);
 
@@ -166,8 +163,6 @@ function chosenAnswer(answerOptions) {
 // Função para exibir resultado do quizz. //
 function calculatingScore() {
 
-console.log("entrou na calculatingScore");
-
     let hideResultsContainer = document.querySelector(".quizz-results-container");
     hideResultsContainer.classList.remove("hidden");
 
@@ -218,37 +213,34 @@ console.log("entrou na calculatingScore");
         }
     }
 
-    // Função para descer para a caixa de resultados depois de 2 segundos. //
-    // if (quizzResult == quizzResult.parentNode.parentNode.lastChild) {
-    //     setTimeout(function () {
-    //         quizzResult.parentNode.parentNode.parentNode.nextElementSibling.scrollIntoView({behavior: 'smooth', block:'center'})
-    //     }, 2000);
-    // }
+// Função para descer para a caixa de resultados depois de 2 segundos. //
+    if (quizzResult == quizzResult.parentNode.parentNode.lastChild) {
+         setTimeout(function () {
+             quizzResult.parentNode.parentNode.parentNode.nextElementSibling.scrollIntoView({behavior: 'smooth', block:'center'})
+         }, 2000);
+    }
 
 }
 
 function restartQuizz() {
-    scrollToTop = document.querySelector('.question-container');
+    let scrollToTop = document.querySelector(".question-container");
     scrollToTop.scrollIntoView();
+
+    let hideResultsContainer = document.querySelector(".quizz-results-container");
+    hideResultsContainer.classList.add("hidden");
+
+    let hideRestartButtons = document.querySelector(".restart-quizz");
+    hideRestartButtons.classList.add("hidden");
 
     showSelectedQuizzOnScreen(result);
 }
 
 // Função para retornar à página inicial (tela 1). Botão. //
-// function backToHomePage() {
-    // let screen1-accessToQuizzes = document.querySelector(".quizz-title-box");
-    // screen1-accessToQuizzes.classList.add("hidden");
-    // let screen1-accessToQuizzes2 = document.querySelector(".question-container");
-    // screen1-accessToQuizzes2.classList.add("hidden");
+function backToHomePage() {
+    document.querySelector(".container-user-quizzes").classList.remove("hidden");
+    document.querySelector(".second-screen").classList.add("hidden");
+    document.querySelector(".container-quizzes").classList.remove("hidden");
 
-    // let allQuizzes = document.querySelector(".allQuizzes");
-    // allQuizzes.classList.remove("hidden");
-
-    // let createQuizz = document.querySelector(".createQuizz");
-    // createQuizz.classList.remove("hidden");
-
-    // scrollToTop = document.querySelector('.createQuizz');
-    // scrollToTop.scrollIntoView();
-
-    // chamar função que carrega quizzes criados
-// }
+    let scrollToTop = document.querySelector(".container-user-quizzes");
+    scrollToTop.scrollIntoView();
+}
