@@ -1,9 +1,10 @@
-Layout desconfigura quando recebe quizz da API aqui. Aí também ?
-Organização aleatória não está funcionando
+Layout desconfigura quando recebe quizz da API. Eu fiz o layout até em outro arquivo estático (com dados fixos, que eu mostrei em call) para configurar tudo direitinho no CSS, mas quando recebe um quizz da API, não aparece da mesma forma. Um exemplo é o header (BuzzQuizz) que some quando dá scroll para baixo, mas reaparece quando dá scroll para cima.
+
+Organização aleatória não está funcionando* >> consegui fazer funcionar !
+
+Na função "chosenAnswers", usando "selectedQuizzContent.data.questions.length === totalOfAnsweredQuestions" tive a intenção de igualar o número de questões que recebo da API com o total de respostas respondidas, que foi declarada como variável global e contada com "totalOfAnsweredQuestions = totalOfAnsweredQuestions++" a cada resposta respondida a partir do "onclick". Com isso, eu chamei a função que calcula o score para exibir o resultado, mas não consegui fazer entrar na função.
+
+A gente não chegou a conseguir unir as telas, o que faz com que o get do meu código não pegue nenhum quizz. E eu fiz o commit assim: "getSelectedQuizz();". Para testar, precisa chamar algum quizz específico, estava trabalhando com o quizz de ID 24 (getSelectedQuizz(24).
+
 Scroll para o topo do quizz quando der F5
 
-calcular score (número acertos)
-buscar total perguntas
-score/total perguntas = porcentagem que aparece na caixa de resultados
-exibir imagem e descrição associadas à porcentagem
-associar porcentagem aos níveis (minValue)

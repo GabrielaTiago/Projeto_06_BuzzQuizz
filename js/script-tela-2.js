@@ -3,6 +3,12 @@ let selectedQuizzContent = "";
 let totalPercentageScore = 0;
 let score = 0;
 let totalOfAnsweredQuestions = 0;
+// let hideResultsContainer = "";
+// let hideRestartButtons = "";
+const scrollToTop = "";
+// let hideQuizz = "";
+
+getSelectedQuizz(24);
 
 // Função para buscar quizz selecionado no servidor. //
 function getSelectedQuizz(quizzID) {
@@ -13,12 +19,19 @@ function getSelectedQuizz(quizzID) {
     selectedQuizz.catch();
 }
 
-getSelectedQuizz();
-
 // Função para exibir quizz selecionado na tela. //
 function showSelectedQuizzOnScreen (result) {
 
+    let hideResultsContainer = document.querySelector(".quizz-results-container");
+    hideResultsContainer.classList.add("hidden");
+
+    let hideRestartButtons = document.querySelector(".restart-quizz");
+    hideRestartButtons.classList.add("hidden");
+
+
     selectedQuizzContent = result;
+
+    console.log(selectedQuizzContent);
 
     let randomizingAnswers = 0;
 
@@ -39,7 +52,6 @@ function showSelectedQuizzOnScreen (result) {
 
     let addQuestions = document.querySelector(".question-container");
     addQuestions.innerHTML = "";
-    
     
     if (selectedQuizzContent.data.questions[0].answers.length === 4) {
         for (let i = 0; i < selectedQuizzContent.data.questions.length; i++) {
@@ -115,7 +127,7 @@ function chosenAnswer(answerOptions) {
     let chosenAnswerOption = answerOptions.parentNode;
     let selectingFigures = chosenAnswerOption.children;
 
-    totalOfAnsweredQuestions = totalOfAnsweredQuestions++;
+    totalOfAnsweredQuestions += 1;
 
     for(let i = 0; i < selectingFigures.length; i++) {
         
@@ -135,12 +147,12 @@ function chosenAnswer(answerOptions) {
     answerOptions.classList.remove("whitened-image");
 
     if (answerOptions.classList.contains("true")) {
-        score = score++;
+        score += 1;
     }
 
-    for(let i = 0; i < selectedQuizzContent.data.questions.length; i++) {
+    for (let i = 0; i < selectedQuizzContent.data.questions.length; i++) {
 
-        if (selectedQuizzContent.data.questions.length === totalOfAnsweredQuestions) {
+        if ((selectedQuizzContent.data.questions.length - 1) === totalOfAnsweredQuestions) {
             calculatingScore();
         }
     }
@@ -152,9 +164,16 @@ function chosenAnswer(answerOptions) {
 }
 
 // Função para exibir resultado do quizz. //
-function calculatingScore(quizzResult) {
+function calculatingScore() {
 
 console.log("entrou na calculatingScore");
+
+    let hideResultsContainer = document.querySelector(".quizz-results-container");
+    hideResultsContainer.classList.remove("hidden");
+
+    let hideRestartButtons = document.querySelector(".restart-quizz");
+    hideRestartButtons.classList.remove("hidden");
+
 
     let arrayOfLevels = [];
     let higherMinValue = 0;
@@ -162,7 +181,9 @@ console.log("entrou na calculatingScore");
 
     totalPercentageScore = Math.floor((score / totalOfAnsweredQuestions) * 100); // porcentagem exibida.
 
-    for(let i = 0; i < arrayOflevels.length; i++) {
+    console.log(totalPercentageScore);
+
+    for(let i = 0; i < (arrayOfLevels.length); i++) {
 
         if(arrayOfLevels[i].minValue === 0) {
             let showResults = document.querySelector(".quizz-results-container");
@@ -198,10 +219,36 @@ console.log("entrou na calculatingScore");
     }
 
     // Função para descer para a caixa de resultados depois de 2 segundos. //
-    if (quizzResult == quizzResult.parentNode.parentNode.parentNode.lastChild) {
-        setTimeout(function () {
-            quizzResult.parentNode.parentNode.parentNode.nextElementSibling.scrollIntoView({behavior: 'smooth', block:'center'})
-        }, 2000);
-    }
+    // if (quizzResult == quizzResult.parentNode.parentNode.lastChild) {
+    //     setTimeout(function () {
+    //         quizzResult.parentNode.parentNode.parentNode.nextElementSibling.scrollIntoView({behavior: 'smooth', block:'center'})
+    //     }, 2000);
+    // }
 
 }
+
+function restartQuizz() {
+    scrollToTop = document.querySelector('.question-container');
+    scrollToTop.scrollIntoView();
+
+    showSelectedQuizzOnScreen(result);
+}
+
+// Função para retornar à página inicial (tela 1). Botão. //
+// function backToHomePage() {
+    // let screen1-accessToQuizzes = document.querySelector(".quizz-title-box");
+    // screen1-accessToQuizzes.classList.add("hidden");
+    // let screen1-accessToQuizzes2 = document.querySelector(".question-container");
+    // screen1-accessToQuizzes2.classList.add("hidden");
+
+    // let allQuizzes = document.querySelector(".allQuizzes");
+    // allQuizzes.classList.remove("hidden");
+
+    // let createQuizz = document.querySelector(".createQuizz");
+    // createQuizz.classList.remove("hidden");
+
+    // scrollToTop = document.querySelector('.createQuizz');
+    // scrollToTop.scrollIntoView();
+
+    // chamar função que carrega quizzes criados
+// }
