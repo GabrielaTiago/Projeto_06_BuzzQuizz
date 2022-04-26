@@ -22,22 +22,10 @@ function getAllQuizzes(response){
             const quizzes = document.querySelector(".quizzes");
 
             quizzes.innerHTML += `
-                <div class="individual-quizz" onclick="goToQuizz(${id})">
+                <div class="individual-quizz image" style="background-image: url(${image});" onclick="goToQuizz(${id})">
                     <h3>${title}</h3>
                 </div>
-             `
+            `
+
         }
-}
-
-
-function getQuizzId(){
-    const promisse = axios.get("https://mock-api.driven.com.br/api/v6/buzzquizz/quizzes/ID_DO_QUIZZ");
-
-    promisse.then(function(response){
-        let id = respponse.data.id;
-        let idsList =JSON.parse(localStorage.getItem("id"))
-        if (idsList !== null){
-            
-        } 
-    });
 }
