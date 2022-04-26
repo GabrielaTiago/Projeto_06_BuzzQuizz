@@ -1,9 +1,24 @@
-Layout desconfigura quando recebe quizz da API aqui. Aí também ?
-Organização aleatória não está funcionando
-Scroll para o topo do quizz quando der F5
+Layout desconfigura quando recebe quizz da API. Eu fiz o layout até em outro arquivo estático (com dados fixos, que eu mostrei em call) para configurar tudo direitinho no CSS, mas quando recebe um quizz da API, não aparece da mesma forma. Um exemplo é o header (BuzzQuizz) que some quando dá scroll para baixo, mas reaparece quando dá scroll para cima.
 
-calcular score (número acertos)
-buscar total perguntas
-score/total perguntas = porcentagem que aparece na caixa de resultados
-exibir imagem e descrição associadas à porcentagem
-associar porcentagem aos níveis (minValue)
+Scroll para o topo do quizz quando der F5 deveria acontecer naturalmente ?
+
+Scroll para próxima pergunta: header cobre pergunta
+
+Eu acho que não entendo parâmetro muito bem: quando eu passo um parâmetro na função calculatingScore(quizzResult) e achando que preciso usar / Função para descer para a caixa de resultados depois de 2 segundos. //
+    if (quizzResult == quizzResult.parentNode.parentNode.lastChild) {
+         setTimeout(function () {
+             quizzResult.parentNode.parentNode.parentNode.nextElementSibling.scrollIntoView({behavior: 'smooth', block:'center'})
+         }, 2000);
+    }
+    
+não entendo porque não funciona.
+
+if ((selectedQuizzContent.data.questions.length - 1) === totalOfAnsweredQuestions) {
+            calculatingScore(quizzResult);
+        }
+        
+script-tela-2.js:153 
+        
+       Uncaught ReferenceError: quizzResult is not defined
+    at chosenAnswer (script-tela-2.js:153:30)
+    at HTMLElement.onclick (index.html:1:1)
