@@ -13,7 +13,7 @@ function getSelectedQuizz(quizzID) {
     selectedQuizz.catch();
 }
 
-getSelectedQuizz();
+//getSelectedQuizz();
 
 // Função para exibir quizz selecionado na tela. //
 function showSelectedQuizzOnScreen (result) {

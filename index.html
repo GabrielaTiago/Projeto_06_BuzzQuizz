@@ -26,6 +26,20 @@
             <button onclick = "basicQuizz();">Criar Quizz</button>
         </div>
 
+        <!---tela 2--->
+        <div class="second-screen hidden ">
+            <div class = "quizz-title-box"></div>
+            <section class = "question-container "></section>
+            <section class = "quizz-results-container"></section>
+            <section class = "restart-quizz">
+                <button class = "restart-quizz-button">
+                    <span>Reiniciar Quizz</span>
+                </button>
+                <button class = "return-to-home-page-button">Voltar pra home</button>
+            </section>
+        </div>
+        <!---tela2--->
+    
         <div class="created-quizzes hidden">
             <span class="user-quizzes">
                 <div class="title-section-quizzes">Seus quizzes</div>
@@ -33,10 +47,6 @@
             </span>
             <div class="created-quizz"></div>
         </div>
-
-        <div class="quizz-title-box hidden"></div>
-
-        <section class="question-container hidden"></section>
 
         <div class="container-quizzes">
             <div class="title-section-quizzes">Todos dos Quizzes</div>
@@ -47,10 +57,10 @@
             </div>
         </div>
     </main>
-    <script src="js/script.js"></script>
-    <script src="js/script-tela-2.js"></script>
-    <script src="js/script-tela-3.js"></script>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/script-tela-2.js"></script>
+    <script src="./js/script-tela-3.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </body>
 </html>
